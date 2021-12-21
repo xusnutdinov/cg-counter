@@ -40,14 +40,10 @@ class Counter {
     #clickHandler() {
         this.$counter.querySelector(".cg-counter-plus").addEventListener("click", (event) => {
             this.plus();
-            this.$counterInput.value = this.currentCount.toString();
-            this.$selector.value = this.currentCount.toString();
         });
 
         this.$counter.querySelector(".cg-counter-minus").addEventListener("click", (event) => {
             this.minus();
-            this.$counterInput.value = this.currentCount.toString();
-            this.$selector.value = this.currentCount.toString();
         });
 
         this.$counterInput.addEventListener("input", (event) => {
@@ -70,12 +66,16 @@ class Counter {
     plus() {
         if (this.currentCount <= 8) {
             this.currentCount += 1;
+            this.$counterInput.value = this.currentCount.toString();
+            this.$selector.value = this.currentCount.toString();
         }
     }
 
     minus() {
         if (this.currentCount >= 1) {
             this.currentCount -= 1;
+            this.$counterInput.value = this.currentCount.toString();
+            this.$selector.value = this.currentCount.toString();
         }
     }
 }
