@@ -52,8 +52,18 @@ class Counter {
 
         this.$counterInput.addEventListener("input", (event) => {
             validate(event.currentTarget);
-            this.currentCount = parseInt(event.currentTarget.value);
+            if (event.currentTarget.value == "") {
+                this.currentCount = 0;
+            } else {
+                this.currentCount = parseInt(event.currentTarget.value);
+            }
             this.$selector.value = this.currentCount.toString();
+        });
+
+        this.$counterInput.addEventListener("blur", (event) => {
+            if (event.currentTarget.value == "") {
+                this.$counterInput.value = this.currentCount.toString();
+            }
         });
     }
 
