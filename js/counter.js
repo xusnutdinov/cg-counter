@@ -13,6 +13,7 @@ class Counter {
     }
 
     #init() {
+        this.currentCount = parseInt(this.$selector.value);
         this.#createCounter();
 
         this.$selector.parentNode.insertBefore(this.$counter, this.$selector);
@@ -22,15 +23,15 @@ class Counter {
     #createCounter() {
         this.$counter = document.createElement("div");
         this.$counter.classList.add("cg-counter");
-        this.$counter.innerHTML = this.#getTempalate();
+        this.$counter.innerHTML = this.#getTempalate(this.currentCount);
         this.$counterInput = this.$counter.querySelector(".cg-counter-input");
     }
 
-    #getTempalate() {
+    #getTempalate(value) {
         return `
             <div class="cg-counter">
                 <button class="cg-counter-minus"><span>-</span></button>
-                <input class="cg-counter-input" type="text" maxlength="1" value="0">
+                <input class="cg-counter-input" type="text" maxlength="1" value="${value.toString()}">
                 <button class="cg-counter-plus"><span>+</span></button>
             </div>
         `;
@@ -40,15 +41,19 @@ class Counter {
         this.$counter.querySelector(".cg-counter-plus").addEventListener("click", (event) => {
             this.plus();
             this.$counterInput.value = this.currentCount.toString();
+            this.$selector.value = this.currentCount.toString();
         });
 
         this.$counter.querySelector(".cg-counter-minus").addEventListener("click", (event) => {
             this.minus();
             this.$counterInput.value = this.currentCount.toString();
+            this.$selector.value = this.currentCount.toString();
         });
 
         this.$counterInput.addEventListener("input", (event) => {
             validate(event.currentTarget);
+            this.currentCount = parseInt(event.currentTarget.value);
+            this.$selector.value = this.currentCount.toString();
         });
     }
 

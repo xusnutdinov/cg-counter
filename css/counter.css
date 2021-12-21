@@ -12,8 +12,14 @@
     border: none;
     font-size: 32px;
     line-height: 100%;
-    color: #3158c7;
     font-weight: 700;
+    color: #7296df;
+    transition: color 0.3s;
+}
+
+.cg-counter-minus:hover,
+.cg-counter-plus:hover {
+    color: #3158c7;
 }
 
 .cg-counter-minus {
