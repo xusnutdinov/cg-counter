@@ -1,0 +1,38 @@
+.cg-counter {
+    display: flex;
+    align-items: center;
+}
+
+.cg-counter-minus,
+.cg-counter-plus {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 32px;
+    line-height: 100%;
+    color: #3158c7;
+    font-weight: 700;
+}
+
+.cg-counter-minus {
+    margin-right: 10px;
+}
+
+.cg-counter-plus {
+    margin-left: 10px;
+}
+
+.cg-counter-input {
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #3158c7;
+}

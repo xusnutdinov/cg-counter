@@ -1,0 +1,13 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+.app {
+    min-height: 100vh;
+    background-color: #c9dcfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
